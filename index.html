@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ideuraf - a continuous path</title>
+  <meta name="description" content="syed jaffery, computer engineering @ university of houston">
+  <meta name="theme-color" content="#f8ecdc">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preload" href="css/index.css" as="style">
+  <link rel="preload" href="assets/pompom/sleeping.png" as="image">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+  <link rel="icon" type="image/png" href="assets/favicon.ico">
+</head>
+<body>
+  <canvas id="backgroundCanvas"></canvas>
+  <div class="center-container">
+    <div class="image-wrapper" id="imageWrapper">
+      <div class="center-image-container">
+        <img src="assets/pompom/sleeping.png" alt="Interactive avatar" class="center-image" id="toggleImage" loading="eager">
+      </div>
+      <div class="hidden-text" id="hiddenText"></div>
+      <div class="button-container" id="buttonContainer">
+        <button class="fade-slide-button" id="aboutBtn" disabled>about me</button>
+        <button class="fade-slide-button" id="contactBtn" disabled>contact</button>
+      </div>
+    </div>
+
+    <div class="popup" id="aboutPopup" role="dialog" aria-labelledby="about-title" aria-hidden="true">
+      <button class="close-btn" id="closeAboutPopup" aria-label="Close popup"></button>
+      <div class="popup-content">
+        <h3 id="about-title">who i am</h3>
+        <p class="popup-description" id="aboutDescription">
+          hey there! i'm syed (or ideuraf online). i'm a <span id="ageSpan"></span>-year-old from houston, studying computer engineering at the cullen college of engineering (at UoH). i mainly enjoy programming and do art on the side! if you ever see me in person, feel free to ask for a sticker :)
+        </p>
+      </div>
+    </div>
+
+    <div class="popup" id="contactPopup" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+      <button class="close-btn" id="closePopup" aria-label="Close popup"></button>
+      <div class="popup-content">
+        <h3 id="contact-title">get in touch</h3>
+        <p class="popup-description">usually the best way to contact me is by email!</p>
+        <div class="email-container">
+          <span id="email" class="copy-email" role="button" tabindex="0">✉️ ideuraf@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="theme-toggle" id="themeToggle" title="Toggle theme (Ctrl+T)">
+    <span id="themeIcon" class="material-icons-round"></span>
+  </button>
+
+  <audio id="wakeAudio" preload="auto">
+    <source src="assets/audio/wake.wav" type="audio/wav">
+  </audio>
+  <audio id="hoverAudio" preload="auto">
+    <source src="assets/audio/hover.wav" type="audio/wav">
+  </audio>
+  <audio id="clickAudio" preload="auto">
+    <source src="assets/audio/click.wav" type="audio/wav">
+  </audio>
+
+  <script src="js/index.js" defer></script>
+</body>
+</html>
